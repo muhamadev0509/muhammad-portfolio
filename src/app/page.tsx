@@ -23,7 +23,7 @@ function FadeInSection({ children, delay = 0 }) {
   );
 }
 
-export function TechIcon({ src, alt, dark = false }: { src: string; alt: string; dark?: boolean }) {
+function TechIcon({ src, alt, dark = false }: { src: string; alt: string; dark?: boolean }) {
   return (
     <div className="group">
       <div className="bg-gray-800 hover:bg-indigo-600 transition-colors p-4 rounded-lg shadow-md flex items-center justify-center">
@@ -40,7 +40,7 @@ export function TechIcon({ src, alt, dark = false }: { src: string; alt: string;
   );
 }
 
-export function ScrollToTopButton() {
+function ScrollToTopButton() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
