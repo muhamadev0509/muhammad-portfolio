@@ -3,20 +3,25 @@
 import Navbar from "@/components/Navbar";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, GraduationCap, BookOpen, Languages } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, ReactNode } from "react";
 import { ArrowUp, Download } from "lucide-react";
 import { useInView } from 'react-intersection-observer';
 import Image from "next/image";
 
-function FadeInSection({ children, delay = 0 }) {
+type FadeInSectionProps = {
+  children: ReactNode;
+  delay?: number;
+};
+
+function FadeInSection({ children, delay = 0 }: FadeInSectionProps) {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
 
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 20 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.7, delay }}
+      transition={{ duration: 0.8, delay }}
     >
       {children}
     </motion.div>
@@ -72,7 +77,7 @@ export default function HomePage() {
       <main className="bg-gray-900 min-h-screen text-white font-sans pt-24 pb-12 p-6 max-w-4xl mx-auto">
         {/* Hero Section */}
         <FadeInSection delay={0.1}>
-          <section
+          <motion.section
             id="about"
             className="text-center space-y-4 mb-20"
             initial={{ opacity: 0, y: -20 }}
@@ -84,11 +89,11 @@ export default function HomePage() {
             <p className="text-md text-gray-400 max-w-xl mx-auto">
               Passionate about building modern, responsive UIs using React, Vue, Tailwind CSS, and TypeScript.
             </p>
-          </section>
+          </motion.section>
         </FadeInSection>
         {/* About Section */}
         <FadeInSection delay={0.1}>
-          <section
+          <motion.section
             id="experience"
             className="max-w-4xl mx-auto mb-20"
             initial={{ opacity: 0 }}
@@ -107,11 +112,11 @@ export default function HomePage() {
                 I love clean code, collaboration, and continuous learning. Open to remote or international opportunities.
               </p>
             </div>
-          </section>
+          </motion.section>
         </FadeInSection>
         {/* Experience Section */}
         <FadeInSection delay={0.1}>
-          <section
+          <motion.section
             className="max-w-4xl mx-auto mb-20"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -157,11 +162,11 @@ export default function HomePage() {
                 </ul>
               </div>
             </div>
-          </section>
+          </motion.section>
         </FadeInSection>
         {/* Education Section */}
         <FadeInSection delay={0.1}>
-          <section
+          <motion.section
             className="max-w-3xl mx-auto mb-20"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -184,11 +189,11 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
-          </section>
+          </motion.section>
         </FadeInSection>
         {/* Training / Courses Section */}
         <FadeInSection delay={0.1}>
-          <section
+          <motion.section
             className="max-w-3xl mx-auto mb-20"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -209,11 +214,11 @@ export default function HomePage() {
                 <p className="text-gray-300">Introduction to React – Codecademy</p>
               </div>
             </div>
-          </section>
+          </motion.section>
         </FadeInSection>
         {/* Languages Section */}
         <FadeInSection delay={0.1}>
-          <section
+          <motion.section
             className="max-w-3xl mx-auto mb-20"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -224,11 +229,11 @@ export default function HomePage() {
               <Languages className="text-indigo-400 w-5 h-5" />
               <p>English – Proficient</p>
             </div>
-          </section>
+          </motion.section>
         </FadeInSection>
         {/* Skills Section */}
         <FadeInSection delay={0.1}>
-          <section
+          <motion.section
             id="skills"
             className="max-w-3xl mx-auto mb-20 text-center"
             initial={{ opacity: 0 }}
@@ -243,11 +248,11 @@ export default function HomePage() {
               <span>Problem-Solving</span><span>Adaptability</span><span>Time Management</span><span>Attention to Detail</span>
               <span>Critical Thinking</span><span>Creativity</span><span>Willingness to Learn</span><span>Feedback Reception</span>
             </div>
-          </section>
+          </motion.section>
         </FadeInSection>
 
         <FadeInSection delay={1.0}>
-          <section id="techstack" className="mb-20 text-center">
+          <motion.section id="techstack" className="mb-20 text-center">
             <h2 className="text-3xl font-semibold text-indigo-300 mb-6">Tech Stack</h2>
             <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 items-center justify-items-center">
               {/* Logos from public folder or CDN icons */}
@@ -263,12 +268,12 @@ export default function HomePage() {
               <TechIcon src="/logos/postman.svg" alt="Postman" dark />
               <TechIcon src="/logos/figma.svg" alt="Figma" dark />
             </div>
-          </section>
+          </motion.section>
         </FadeInSection>
 
         {/* Projects Section */}
         <FadeInSection delay={0.1}>
-          <section
+          <motion.section
             id="projects"
             className="max-w-6xl mx-auto px-4 md:px-6 mb-24 text-center"
             initial={{ opacity: 0 }}
@@ -307,11 +312,11 @@ export default function HomePage() {
                 <div className="text-sm text-gray-500">HTML · CSS · Bootstrap</div>
               </div>
             </div>
-          </section>
+          </motion.section>
         </FadeInSection>
 
         <FadeInSection delay={0.8}>
-          <section id="testimonials" className="mb-20 text-center">
+          <motion.section id="testimonials" className="mb-20 text-center">
             <h2 className="text-3xl font-semibold text-indigo-300 mb-6">Testimonials</h2>
             <div className="space-y-6">
               <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
@@ -327,12 +332,12 @@ export default function HomePage() {
                 <p className="mt-2 text-sm text-gray-500">— Project Manager, Softinn Solutions</p>
               </div>
             </div>
-          </section>
+          </motion.section>
         </FadeInSection>
 
         {/* Contact Section */}
         <FadeInSection delay={0.1}>
-          <section
+          <motion.section
             id="contact"
             className="max-w-2xl mx-auto text-center"
             initial={{ opacity: 0 }}
@@ -369,7 +374,7 @@ export default function HomePage() {
               Download Resume
             </a>
 
-          </section>
+          </motion.section>
         </FadeInSection>
 
         <ScrollToTopButton />
