@@ -3,6 +3,11 @@
 Hi! I'm **Muhammad Amir bin Hassan**, a passionate **Junior Frontend Developer** from Kajang, Selangor, Malaysia.  
 I specialize in building modern, responsive web interfaces using **React.js**, **Vue.js**, **Next.js**, and **Tailwind CSS**.
 
+## Live Demo
+
+You can view the live site here:  
+[https://muhammad-portfolio-u6w9.vercel.app](https://muhammad-portfolio-u6w9.vercel.app)
+
 ## About Me
 
 A summary of my experience, skills, and education is included in this portfolio. It is designed to reflect real-world project contributions and professional growth as a frontend developer.
